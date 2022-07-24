@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS db_lms;
+USE db_lms;
+
+
+CREATE TABLE IF NOT EXISTS users (
+	id_user INT PRIMARY KEY,
+    userName VARCHAR (100),
+    birthdate DATE,
+    occupation VARCHAR (100),
+    address VARCHAR (150)
+);
+
+CREATE TABLE IF NOT EXISTS books (
+	id_book INT PRIMARY KEY,
+    bookName VARCHAR (150),
+    category VARCHAR (150),
+    stock NUMERIC (5)
+);
+
+CREATE TABLE IF NOT EXISTS borrows (
+	id_user INT,
+    id_book INT,
+    userName VARCHAR (100),
+    bookName VARCHAR (150),
+    borrowDate DATE,
+    returnDate DATE
+);
+
+ALTER TABLE borrows
+ADD FOREIGN KEY (id_user) REFERENCES users (id_user);
+
+ALTER TABLE borrows
+ADD FOREIGN KEY (id_book) REFERENCES books (id_book);
