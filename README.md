@@ -1,4 +1,5 @@
-# python-project-lms
+# python-project-lms 
+id user Pacmann: dhiya_an-aGEf
 
 * Tujuan: membuat sistem manajemen perpustakaan (lms) yang terhubung dengan database.
 * Database dirancang di MySQL Workbench 8.0.
